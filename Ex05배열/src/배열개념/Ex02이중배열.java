@@ -25,14 +25,14 @@ public class Ex02이중배열 {
 		System.out.println(array2[1][2]);
 		System.out.println(array2[1]); //정확히 행 열을 지정해주어야한다.
 		
-		System.out.println(array2[0][3]);
-		System.out.println(array2[1][3]);
-		System.out.println(array2[2][3]);
+		System.out.println(array2[0][3]); //4
+		System.out.println(array2[1][3]); //8
+		System.out.println(array2[2][3]); //12
 		
 		
-		System.out.println(array2[0][0]);
-		System.out.println(array2[0][1]);
-		System.out.println(array2[0][2]);
-		System.out.println(array2[0][3]);
+		System.out.println(array2[0][0]); //1
+		System.out.println(array2[0][1]); //2
+		System.out.println(array2[0][2]); //3
+		System.out.println(array2[0][3]); //4
 	}
 }
