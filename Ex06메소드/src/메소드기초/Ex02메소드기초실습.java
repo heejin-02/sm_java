@@ -32,6 +32,5 @@ public class Ex02메소드기초실습 {
 			System.out.println("연산자만 입력하세요");
 		return result;
 		
-		
 	}
 }
