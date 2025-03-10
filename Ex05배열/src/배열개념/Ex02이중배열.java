@@ -29,5 +29,10 @@ public class Ex02이중배열 {
 		System.out.println(array2[1][3]);
 		System.out.println(array2[2][3]);
 		
+		
+		System.out.println(array2[0][0]);
+		System.out.println(array2[0][1]);
+		System.out.println(array2[0][2]);
+		System.out.println(array2[0][3]);
 	}
 }
