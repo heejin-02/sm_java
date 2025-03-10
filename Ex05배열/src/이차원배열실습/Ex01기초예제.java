@@ -26,6 +26,15 @@ public class Ex01기초예제 {
 			System.out.print(array2[2][i] + " ");
 		}
 		//for문이 총 3개
+		System.out.println();
+		
+		
+		for (int j=0; j<array2.length; j++) {
+			for(int i=0; i<array2[j].length; i++) {
+				System.out.print(array2[j][i] + " ");
+			}
+			System.out.println();
+		}
 		
 		
 	}
