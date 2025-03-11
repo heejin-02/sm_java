@@ -19,6 +19,13 @@ public class Ex01메소드개요 {
 		// 		메소드 안에 메소드를 만드는 건 불가능하다.
 		// 		-> 메인메소드 바깥에 추가 메소드를 만들어야한다.
 		
+		// ★ 메소드 오버로딩(method overloading) ★
+		// - 같은 이름의 메소드를 여러개 정의할 수 있음
+		// - 기본적으로 메소드명은 중복이 허용되지 않지만,
+		// 	 메소드가 가지는 매개변수의 갯수, 타입 등이 다르면
+		// 	 서로 다른 메소드라고 인식
+		introduce("안녕하세요!");
+		
 		//메소드 사용
 		introduce();
 		
@@ -41,6 +48,12 @@ public class Ex01메소드개요 {
 		System.out.println("이름 : 희진 ");
 		System.out.println("나이 : 24");
 		System.out.println("취미 : 게임");
+	}
+	
+	//기존 introduce와 이름은 같지만, 매개변수가 달라서 
+	//서로 별개의 메소드로 인식
+	public static void introduce(String hello) {
+		System.out.println(hello);
 	}
 	
 	// 메소드 생성(매개변수O, 반환값X)
