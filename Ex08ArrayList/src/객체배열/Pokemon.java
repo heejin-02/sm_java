@@ -1,4 +1,4 @@
-package 포켓몬게임;
+package 객체배열;
 
 public class Pokemon {
 	
