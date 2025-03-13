@@ -11,7 +11,4 @@ public class Dongmul extends GameChip {
 	
 
 	
-	
-	
-	
 }
