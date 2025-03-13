@@ -1,15 +1,10 @@
 package 추상클래스;
 
-public class RegularEmployee {
-	private String empno;
-	private String name;
-	private int pay;
+public class RegularEmployee extends Employee {
 	private int bonus;
 
 	public RegularEmployee(String empno, String name, int pay, int bonus) {
-		this.empno = empno;
-		this.name = name;
-		this.pay = pay;
+		super(empno, name, pay);
 		this.bonus = bonus;
 	}
 	
@@ -18,7 +13,5 @@ public class RegularEmployee {
 		
 	}
 	
-	public String print() {
-		 return empno + ":" + name + ":"+ pay;
-	}
+
 }

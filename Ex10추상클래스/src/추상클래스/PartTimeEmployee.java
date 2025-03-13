@@ -1,24 +1,16 @@
 package 추상클래스;
 
-public class PartTimeEmployee {
-	private String empno;
-	private String name;
-	private int pay;
+public class PartTimeEmployee extends Employee{
 	private int workDay;
 	
 	public PartTimeEmployee(String empno, String name, int pay, int workDay) {
-		this.empno = empno;
-		this.name = name;
-		this.pay = pay;
+		super(empno, name, pay); // 부모클래스의 생성자
 		this.workDay = workDay;
 	}
 	
 	public int getMoneyPay() {
-		return pay*workDay;
+		return (pay*workDay);
 	}
 	
-	public String print() {
-		return empno +":" + name + ":" + workDay;
-	}
-	
+
 }
