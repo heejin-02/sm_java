@@ -31,11 +31,11 @@ public class Main {
 		for(int i=0; i<bag.length; i++) {
 			System.out.println(bag[i].getName() + "\t" + bag[i].getType() + "\t" + bag[i].getHp());
 		}
-		// for-each문 for(데이터타입 변수명 :반복시키고싶은 배열이름)
-		// : 배열과 같이 여러개의 데이터를 저장하는 자료구조와 함께 사용
-		// ** 동작 원리
-		// 배열 안에 저장되어있는 데이터를 for문에서 순차적으로 꺼내서
-		// :(콜론) 기준 왼쪽에 있는 변수에 담아주는 흐름을 가진다.
+//		 for-each문 for(데이터타입 변수명 :반복시키고싶은 배열이름)
+//		 : 배열과 같이 여러개의 데이터를 저장하는 자료구조와 함께 사용
+//		 ** 동작 원리
+//		 배열 안에 저장되어있는 데이터를 for문에서 순차적으로 꺼내서
+//		 :(콜론) 기준 왼쪽에 있는 변수에 담아주는 흐름을 가진다.
 		
 		for(Pokemon p :bag) {
 			System.out.println(p.getName() + "\t" + p.getType() + "\t" + p.getHp());
