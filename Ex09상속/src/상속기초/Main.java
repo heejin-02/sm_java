@@ -41,7 +41,16 @@ public class Main {
  		p2.makeBibim(); 
  		
  		// 2) Down Casting(다운캐스팅)
- 		Child c2 = (Child) new Parent(); // 부모 객체를 자식 객체로 강제로 형변환
+ 		//Child c2 = (Child) new Parent(); 
+ 		//코드에서 빨간줄이 뜬다 == Syntax Error (구문오류)
+ 		//Exception 발생!!
+ 		// : 구문 오류는 없지만 실행했을 때 예외상황이 발생하는 것
+ 		                                          
+ 		// 3)진짜 다운캐스팅
+ 		// : 업캐스팅 된 객체를 강제 형변환으로 본래의 자료 형태를 되돌려 놓는 것
+ 		// 전제조건 : 업캐스팅 된 객체를 다운캐스팅 할 수 있다!
+ 		Child c2 = (Child)p2;
+ 		c2.makeBul();
  		
  		
  		
