@@ -57,7 +57,7 @@ public class Ex05SelectAll {
 				// smhrd 이도연 20 0
 				// smhrd2 이도연2 21 50
 				System.out.print(rs.getString("id")+"\t");
-				System.out.print(rs.getString("name")+"\t"); // 찾고자 하는 컬럼명 uName 변수를 만들어 이름을 받아준다
+				System.out.print(rs.getString("name")+"\t"); 
 				System.out.print(rs.getInt("age")+"\t");
 				System.out.println(rs.getInt("score"));
 				
