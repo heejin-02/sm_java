@@ -31,27 +31,22 @@ public class Ex04Update {
 			String password = "hr";
 			conn = DriverManager.getConnection(url, user, password);
 
-			//연결 확인 용
-//			if (conn != null) {
-//				System.out.println("연결 성공");
-//			} else {
-//				System.out.println("연결 실패");
-//			}
 			
-			String sql = "DELETE FROM DATADESIGNMEMBER WHERE ID =? AND PW = ?";
-			
+			String sql = "UPDATE DATADESIGNMEMBER SET SCORE = ? WHERE ID = ? AND PW = ?";
 			psmt = conn.prepareStatement(sql);
 			
-			psmt.setString(1, id);
-			psmt.setString(2, pw);
+			psmt.setInt(1, score);
+			psmt.setString(2, id);
+			psmt.setString(3, pw);
+			
 		
 			int row = psmt.executeUpdate();
-			
+
 			if(row > 0 ) {
-				System.out.println("회원 탈퇴 성공");
+				System.out.println("점수 수정 성공");
 			}
 			else {
-				System.out.println("회원 탈퇴를 실패했습니다.");
+				System.out.println("점수 수정 실패");
 			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
