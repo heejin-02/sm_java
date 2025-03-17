@@ -27,6 +27,8 @@ public class Ex06Dama {
 		PreparedStatement psmt = null;
 		ResultSet rs = null;
 
+		String name = null;
+		String food = null;
 		while (true) {
 			System.out.println("메뉴 [1] 다마고치 생성 [2] 다마고치 키우기 >>>");
 			int select = sc.nextInt();
@@ -35,13 +37,14 @@ public class Ex06Dama {
 				// 다마고치 생성
 				// 사용자에게 이름 입력받기, 좋아하는 음식 입력받기
 				// 다마고치의 배고픔 수치, 졸림 수치는 무조건 30으로 (사용자 입력x)
-				System.out.println("사용자 이름 입력 : ");
-				String name = sc.next();
-				System.out.println("좋아하는 음식 입력 : ");
-				String food = sc.next();
+				System.out.print("사용자 이름 입력 : ");
+				name = sc.next();
+				System.out.print("좋아하는 음식 입력 : ");
+				food = sc.next();
 
 				// 1. DB 작업
 				try {
+					//작업할때마다 커넥션 생성
 					conn = DriverManager.getConnection(url, user, password);
 
 					// 다마고치 생성 정보
@@ -94,9 +97,37 @@ public class Ex06Dama {
 					}
 
 				} else if (select2 ==2) { // 밥주기 선택
+					// 1. 다마고치의 이름과, 어떤 음식을 줄지를 작성받기
+					System.out.print("음식을 줄 다마고치 이름을 입력하세요 : ");
+					name = sc.next();
+					System.out.print("어떤 음식을 줄 지 입력하세요 : ");
+					food = sc.next();
+					try {
+						conn = DriverManager.getConnection(url, user, password);
+						
+						// 2. 1에서 입력한 이름이 있는지 검사
+						String sql = "UPDATE DAMA SET HUNGRY = HUNGRY-5  WHERE NAME = ?";
+						psmt = conn.prepareStatement(sql);
+						psmt.setString(1, name);
 
+						int feedResult = psmt.executeUpdate();
+						
+						if (feedResult > 0) {
+							System.out.println(name + "에게 " + food + "를 줬습니다!");
+						}
+						else {
+							System.out.println("밥 주기 실패");
+						}
+					} catch (SQLException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					
+					//3. 밥 주기 완료. 배고픔을 -5 시키기(심화)
+					
 				}
 			}
 		}
+	
 	}
 }
