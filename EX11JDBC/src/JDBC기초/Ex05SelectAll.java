@@ -84,9 +84,4 @@ public class Ex05SelectAll {
 
 	}
 
-	private static void While(boolean b) {
-		// TODO Auto-generated method stub
-		
-	}
-
 }

@@ -23,7 +23,7 @@ public class Ex01Join {
 		//JDBC(Java Database Connectivity)
 		//: JDBC 인터페이스 사용 방법
 		PreparedStatement psmt = null;
-		Connection conn = null;
+		Connection conn = null; //DB의 연결여부 파악
 		try {
 			//try 구문
 			// -> 예외가 발생할 수도 있지만, 우선 시도해보는 구간!
@@ -94,7 +94,7 @@ public class Ex01Join {
 			int row = psmt.executeUpdate();
 			// executeUpdate() : insert, update, delete에만 사용한다.
 			
-			//5. 결과를 이용한 작업처리
+			//5. 결과를 이용한 작업처리 0이면 아무것도 변경되지 않았다는 뜻
 			if(row > 0) {
 				System.out.println("회원가입 성공~");
 			}else {
