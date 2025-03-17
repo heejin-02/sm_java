@@ -22,12 +22,14 @@ public class Main {
 //		3. 컨트롤러 -> 모델 로직실행 요청
 //		4. 모델 -> 컨트롤러 (응답 데이터 전달)
 //		5. 컨트롤러 -> 뷰(사용자에게 표시할 데이터)
+		
 		Scanner sc = new Scanner(System.in);
 		
 		// 컨트롤러 객체 생성
 		Controller control = new Controller();
 		
 		System.out.print("메뉴 선택 >> ");
+		System.err.println("[1] 회원가입");
 		int input = sc.nextInt();
 		
 		if(input == 1) {
@@ -43,7 +45,17 @@ public class Main {
 		
 			// controller에 필요한 정보를 담아서, 로직을 수행하게끔 
 			// Model이 로직을 수행하게끔
-			control.Con_join(id, pw, name, age);
+			// *Controller의 Con_join : view에서 입력받은 정보를 받아서 model에 전해줌
+			
+			int result = control.Con_join(id, pw, name, age);
+			
+			//return된 result의 값으로 성공 여부를 확인
+			if(result > 0) {
+				System.out.println("회원가입 성공!");
+			} else {
+				System.out.println("실패");
+			}
+			
 		}
 		
 	}

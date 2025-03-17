@@ -106,6 +106,7 @@ public class Ex06Dama {
 						conn = DriverManager.getConnection(url, user, password);
 						
 						// 2. 1에서 입력한 이름이 있는지 검사
+						//3. 밥 주기 완료. 배고픔을 -5 시키기(심화)
 						String sql = "UPDATE DAMA SET HUNGRY = HUNGRY-5  WHERE NAME = ?";
 						psmt = conn.prepareStatement(sql);
 						psmt.setString(1, name);
@@ -123,7 +124,6 @@ public class Ex06Dama {
 						e.printStackTrace();
 					}
 					
-					//3. 밥 주기 완료. 배고픔을 -5 시키기(심화)
 					
 				}
 			}

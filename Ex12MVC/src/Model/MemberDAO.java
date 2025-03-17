@@ -14,6 +14,8 @@ public class MemberDAO {
 	
 	public void getConn() { //DB 접속 메소드
 		  try {
+			  // getConn
+			  // - 드라이버 로딩, url/user/pw로 DB접속
 		         Class.forName("oracle.jdbc.driver.OracleDriver");
 
 		         // DB연결에 필요한 설정값
@@ -45,14 +47,14 @@ public class MemberDAO {
 		getConn();
 		
 		// DB쿼리문 실행
-		String sql = "INSERT INTO DATADESIGNMEMBER VALUES(?,?,?,?)";
+		String sql = "INSERT INTO DATADESIGNMEMBER VALUES(?,?,?,?,0)";
 		try {
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, dto.getId());
 			psmt.setString(2, dto.getPw());
 			psmt.setString(3, dto.getName());
 			psmt.setInt(4, dto.getAge());
-			result = psmt.executeUpdate();
+			result = psmt.executeUpdate(); //실행
 			
 			if(result > 0) {
 				System.out.println();
@@ -61,7 +63,7 @@ public class MemberDAO {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
-			Close();
+			Close(); // 도구 반납
 		}
 		
 		return result;
