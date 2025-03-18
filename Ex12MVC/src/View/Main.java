@@ -1,8 +1,10 @@
 package View;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import Controller.Controller;
+import Model.MemberDTO;
 
 public class Main {
 
@@ -29,7 +31,7 @@ public class Main {
 		Controller control = new Controller();
 		
 		System.out.print("메뉴 선택 >> ");
-		System.err.println("[1] 회원가입");
+		System.err.println("[1] 회원가입 [2] 전체회원조회 [3] 정보수정  >>");
 		int input = sc.nextInt();
 		
 		if(input == 1) {
@@ -55,9 +57,40 @@ public class Main {
 			} else {
 				System.out.println("실패");
 			}
+			} else if(input ==2) {
+				//전체회원조회
+				System.out.println("====== 전 체 회 원 ======");
+				System.out.println("ID\t이름\t나이");
+				
+				ArrayList<MemberDTO> result = control.Con_list();
+				
+				for(int i=0; i<result.size(); i++) {
+					System.out.println(result.get(i).getId() + "\t"
+									   + result.get(i).getName() + "\t"
+									   + result.get(i).getAge());
+			}
 			
+		}else if(input==3) {
+			System.out.println("====== 정 보 수 정 ======");
+			System.out.print("ID :");
+			String id = sc.next();
+			System.out.print("PW : ");
+			String pw = sc.next();
+			System.out.println("변경할 이름 : ");
+			String name = sc.next();
+			int result = control.Con_update(id,pw,name);
+			
+			if(result > 0) {
+				System.out.println("정보수정 성공!");
+			}
+			else {
+				System.out.println("정보 수정 실패");
+			}
+			
+			
+		}
 		}
 		
 	}
 
-}
+
