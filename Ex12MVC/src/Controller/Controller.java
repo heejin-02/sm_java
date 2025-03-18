@@ -37,5 +37,11 @@ public class Controller {
 		result = dao.update(dto);
 		return result;
 	}
+	public int Con_delete(String id, String pw) {
+		// 전달해야 하는 데이터를 하나의 묶음으로 만들어서(객체 생성)
+		MemberDTO dto = new MemberDTO(id,pw);
+		result = dao.delete(dto);
+		return result;
+	}
 	
 }

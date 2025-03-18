@@ -30,7 +30,11 @@ public class MemberDTO {
 		this.age = age;
 	}
 
-
+	//회원탈퇴를 위한 생성자 메소드
+	public MemberDTO(String id, String pw) {
+		this.id = id;
+		this.pw = pw;
+	}
 
 	// getter
 	// DTO의 데이터들은 private이기 때문에 
